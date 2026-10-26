@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <style>
+    rect { fill: #8a3b12; }
+    text { fill: #fbfaf7; font: 600 20px system-ui, sans-serif; }
+  </style>
+  <rect width="32" height="32" rx="6" />
+  <text x="16" y="23" text-anchor="middle">C</text>
+</svg>

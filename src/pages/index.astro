@@ -1,5 +1,26 @@
 ---
-import { getResume } from "../lib/content.ts";
+import Base from "../layouts/Base.astro";
+import { getProjects, getResume } from "../lib/content.ts";
+
 const resume = await getResume();
+const projects = await getProjects();
 ---
-<p>{resume.name}</p>
+<Base title={resume.name} description={resume.headline}>
+  <section>
+    <h1>{resume.name}</h1>
+    <p class="lede">{resume.headline}</p>
+    <p>{resume.summary}</p>
+  </section>
+  <section aria-labelledby="projects">
+    <h2 id="projects">Projects</h2>
+    <ul class="project-list">
+      {projects.map((project) => (
+        <li>
+          <a href={`/projects/${project.id}/`}>{project.data.title}</a>
+          <p>{project.data.tagline}</p>
+          <p class="stack">{project.data.stack.join(" · ")}</p>
+        </li>
+      ))}
+    </ul>
+  </section>
+</Base>

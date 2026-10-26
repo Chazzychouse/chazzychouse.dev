@@ -1,0 +1,73 @@
+---
+import "@fontsource-variable/source-serif-4";
+import "@fontsource-variable/inter";
+import "../styles/global.css";
+import { getResume } from "../lib/content.ts";
+import { ANALYTICS_TOKEN } from "../site.ts";
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+const resume = await getResume();
+const pageTitle = title === resume.name ? title : `${title} · ${resume.name}`;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const nav = [
+  { href: "/resume/", label: "Resume" },
+  { href: "/about/", label: "About" },
+];
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    {ANALYTICS_TOKEN && (
+      <script
+        is:inline
+        defer
+        src="https://static.cloudflareinsights.com/beacon.min.js"
+        data-cf-beacon={JSON.stringify({ token: ANALYTICS_TOKEN })}
+      />
+    )}
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="site-header">
+      <nav aria-label="Site">
+        <a class="name" href="/" aria-current={Astro.url.pathname === "/" ? "page" : undefined}>
+          {resume.name}
+        </a>
+        <ul>
+          {nav.map((item) => (
+            <li>
+              <a
+                href={item.href}
+                aria-current={Astro.url.pathname === item.href ? "page" : undefined}
+              >
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </header>
+    <main id="main">
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <ul>
+        <li><a href={`mailto:${resume.email}`}>{resume.email}</a></li>
+        <li><a href={resume.github}>GitHub</a></li>
+        <li><a href="/resume.pdf">Resume (PDF)</a></li>
+      </ul>
+    </footer>
+  </body>
+</html>

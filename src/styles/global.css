@@ -1,0 +1,118 @@
+:root {
+  --bg: #fbfaf7;
+  --text: #1d1c1a;
+  --muted: #5d5a54;
+  --rule: #dedad2;
+  --accent: #8a3b12;
+  --serif: "Source Serif 4 Variable", Georgia, serif;
+  --sans: "Inter Variable", system-ui, sans-serif;
+  --measure: 40rem;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #161513;
+    --text: #e9e6df;
+    --muted: #a8a399;
+    --rule: #34312c;
+    --accent: #e8955f;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 1.125rem/1.65 var(--serif);
+}
+
+.site-header, main, .site-footer {
+  max-width: var(--measure);
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+.site-header nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem 1.5rem;
+  padding-block: 1.5rem;
+  border-bottom: 1px solid var(--rule);
+  font-family: var(--sans);
+  font-size: 0.95rem;
+}
+
+.site-header ul, .site-footer ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-header .name { color: var(--text); font-weight: 600; text-decoration: none; }
+
+main { padding-block: 2.5rem 3rem; }
+
+h1, h2, h3 { font-family: var(--sans); line-height: 1.25; letter-spacing: -0.01em; }
+h1 { font-size: 2rem; margin: 0 0 0.5rem; }
+h2 { font-size: 1.15rem; margin: 2.5rem 0 0.75rem; }
+h3 { font-size: 1rem; margin: 1.5rem 0 0.25rem; }
+
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 0.15em; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+[aria-current="page"] { color: var(--text); text-decoration: none; }
+
+.lede { font-size: 1.25rem; }
+.meta, .stack, .dates { color: var(--muted); font-family: var(--sans); font-size: 0.9rem; }
+
+.project-list { margin: 0; padding: 0; list-style: none; }
+.project-list li { padding-block: 1rem; border-top: 1px solid var(--rule); }
+.project-list li > a { font-family: var(--sans); font-size: 1.1rem; font-weight: 600; }
+.project-list p { margin: 0.25rem 0 0; }
+
+.roles { margin: 0 0 0.5rem; padding: 0; list-style: none; }
+
+main img { max-width: 100%; height: auto; }
+
+.skip { position: absolute; left: -9999px; }
+.skip:focus { top: 1rem; left: 1rem; padding: 0.5rem; background: var(--bg); }
+
+.site-footer {
+  padding-block: 0 2rem;
+  color: var(--muted);
+  font-family: var(--sans);
+  font-size: 0.9rem;
+}
+
+/* The rule sits on the list, not the padded footer, so it lines up with the header's. */
+.site-footer ul { padding-top: 2rem; border-top: 1px solid var(--rule); }
+
+@media print {
+  @page { size: Letter; margin: 0.55in 0.6in; }
+  :root { --bg: #fff; --text: #000; --muted: #333; --rule: #999; --accent: #000; }
+  body { font-size: 10pt; line-height: 1.4; }
+  .site-header, .site-footer, .skip, .download { display: none; }
+  main { max-width: none; padding: 0; }
+  h1 { font-size: 18pt; margin: 0; }
+  h2 {
+    margin: 12pt 0 4pt;
+    border-bottom: 0.5pt solid var(--rule);
+    font-size: 11pt;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  h3 { font-size: 10.5pt; margin: 8pt 0 2pt; }
+  ul { margin: 2pt 0; padding-left: 14pt; }
+  li { margin: 1pt 0; }
+  .resume .entry { break-inside: avoid; }
+  a { text-decoration: none; }
+  .meta, .stack, .dates { font-size: 9pt; }
+}

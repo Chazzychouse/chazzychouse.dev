@@ -1,0 +1,89 @@
+---
+import Base from "../layouts/Base.astro";
+import { getProjects, getResume } from "../lib/content.ts";
+import { formatRange } from "../lib/dates.ts";
+
+const resume = await getResume();
+const projects = await getProjects();
+const githubLabel = resume.github.replace(/^https:\/\//, "");
+---
+<Base title="Resume" description={`Resume of ${resume.name}: ${resume.headline}`}>
+  <article class="resume">
+    <header>
+      <h1>{resume.name}</h1>
+      <p class="meta">{resume.location}</p>
+      <p class="meta">
+        <a href={`mailto:${resume.email}`}>{resume.email}</a>{" · "}<a href={resume.github}>{githubLabel}</a>
+      </p>
+      <p class="download"><a href="/resume.pdf" download>Download PDF</a></p>
+    </header>
+
+    <section aria-labelledby="summary">
+      <h2 id="summary">Summary</h2>
+      <p>{resume.summary}</p>
+    </section>
+
+    <section aria-labelledby="experience">
+      <h2 id="experience">Experience</h2>
+      {resume.experience.map((job) => (
+        <div class="entry">
+          <h3>{job.company}</h3>
+          <ul class="roles">
+            {job.roles.map((role) => (
+              <li>
+                {role.title} <span class="dates">{formatRange(role.start, role.end)}</span>
+              </li>
+            ))}
+          </ul>
+          <ul>{job.bullets.map((bullet) => <li>{bullet}</li>)}</ul>
+        </div>
+      ))}
+    </section>
+
+    <section aria-labelledby="projects">
+      <h2 id="projects">Projects</h2>
+      {projects.map((project) => (
+        <div class="entry">
+          <h3><a href={`/projects/${project.id}/`}>{project.data.title}</a>: {project.data.tagline}</h3>
+          <p class="stack">
+            {project.data.stack.join(" · ")}{" · "}<a href={project.data.repo}>{project.data.repo.replace(/^https:\/\//, "")}</a>
+          </p>
+          <ul>{project.data.highlights.map((item) => <li>{item}</li>)}</ul>
+        </div>
+      ))}
+    </section>
+
+    <section aria-labelledby="skills">
+      <h2 id="skills">Skills</h2>
+      <ul>
+        {resume.skills.map((group) => (
+          <li><strong>{group.label}:</strong> {group.items.join(", ")}</li>
+        ))}
+      </ul>
+    </section>
+
+    <section aria-labelledby="education">
+      <h2 id="education">Education</h2>
+      {resume.education.map((school) => (
+        <div class="entry">
+          <h3>{school.school}</h3>
+          <p class="meta">{school.program} · {formatRange(school.start, school.end)}</p>
+          {school.note && <p>{school.note}</p>}
+        </div>
+      ))}
+    </section>
+
+    <section aria-labelledby="earlier">
+      <h2 id="earlier">Earlier Experience</h2>
+      {resume.earlier.map((job) => (
+        <div class="entry">
+          <h3>{job.title}</h3>
+          <p class="meta">
+            {job.org} · {formatRange(job.start, job.end)}{job.note && ` · ${job.note}`}
+          </p>
+          <p>{job.detail}</p>
+        </div>
+      ))}
+    </section>
+  </article>
+</Base>

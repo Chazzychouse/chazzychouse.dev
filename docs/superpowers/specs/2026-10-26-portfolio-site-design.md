@@ -104,7 +104,7 @@ Pull requests run steps 1–3 without deploying.
 - Cloudflare Email Routing for chazzychouse.dev: `chase@chazzychouse.dev` forwarding to
   `chazzychouse.dev@gmail.com`. Until it is verified, the resume shows the Gmail address.
 - Make the featured repos public: sportal, gpui-tunes and bongocat (bongocat needs a remote).
-  Ingest the World is in `~/resume/projects/` and needs a GitHub repo too.
+  Ingest the World already has a remote (`Chazzychouse/ingest-the-world`); confirm it is public.
 - Create the Cloudflare API token and add it, with the account ID, to the repo's secrets.
 
 ## Out of scope

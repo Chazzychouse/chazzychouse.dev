@@ -14,6 +14,8 @@ learn Rust GUI programming on GPUI, the GPU-rendered UI framework behind the Zed
 
 ## What I built
 
+![gpui-tunes playing Clair de lune: the now-playing bar with cover art and progress, the genre, artist and album browser filtered to Impressionist, and the song table below. The library is a demo of public-domain works.](/figures/gpui-tunes.webp)
+
 gpui-tunes scans a music folder at startup and shows the library in the classic layout: a
 sidebar, a genre, artist and album browser, album art, and a song table. It plays M4A (AAC), MP3,
 WAV, FLAC and OGG Vorbis, with a play queue.

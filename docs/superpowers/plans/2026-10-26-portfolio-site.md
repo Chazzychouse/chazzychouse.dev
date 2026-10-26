@@ -15,7 +15,7 @@ static assets serves `dist/` with headers from `public/_headers`.
 
 **Tech Stack:** Astro 7.4.2, TypeScript 6.0.3 (`astro check` doesn't support TS 7), Zod 4 via
 `astro/zod`, Vitest 5.0.5, Playwright 1.64.1, @axe-core/playwright 4.14.0, unpdf 1.9.1, yaml
-2.9.1, wrangler 4.153.0, Fontsource (Source Serif 4, Inter), pnpm 12.14.0, Node 24 in CI.
+2.9.1, wrangler 4.152.0, Fontsource (Source Serif 4, Inter), pnpm 12.14.0, Node 24 in CI.
 
 ## Global Constraints
 
@@ -1856,7 +1856,7 @@ Expected: all pass.
 }
 ```
 
-Run: `pnpm add -D wrangler@4.153.0`
+Run: `pnpm add -D wrangler@4.152.0`
 
 - [ ] **Step 5: Write `scripts/smoke.ts`**
 

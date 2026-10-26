@@ -8,9 +8,11 @@ import { ANALYTICS_TOKEN } from "../site.ts";
 interface Props {
   title: string;
   description: string;
+  /** False for pages search engines should skip, like the 404: no canonical URL, noindex. */
+  indexable?: boolean;
 }
 
-const { title, description } = Astro.props;
+const { title, description, indexable = true } = Astro.props;
 const resume = await getResume();
 const pageTitle = title === resume.name ? title : `${title} · ${resume.name}`;
 const canonical = new URL(Astro.url.pathname, Astro.site);
@@ -27,7 +29,7 @@ const nav = [
     <meta name="color-scheme" content="light dark" />
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
-    <link rel="canonical" href={canonical} />
+    {indexable ? <link rel="canonical" href={canonical} /> : <meta name="robots" content="noindex" />}
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     {ANALYTICS_TOKEN && (
       <script

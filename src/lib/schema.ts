@@ -52,6 +52,9 @@ export const projectSchema = z.object({
   stack: z.array(z.string()).min(1),
   repo: z.url(),
   order: z.number().int().positive(),
-  /** Bullets for the resume's Projects section; the write-up body is the page. */
-  highlights: z.array(z.string()).min(1).max(4),
+  /**
+   * Bullets for the resume's Projects section; the write-up body is the page. Projects without
+   * them get one line on the resume, which keeps it to two pages.
+   */
+  highlights: z.array(z.string()).min(1).max(4).optional(),
 });

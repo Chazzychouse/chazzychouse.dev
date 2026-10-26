@@ -48,7 +48,9 @@ const githubLabel = resume.github.replace(/^https:\/\//, "");
           <p class="stack">
             {project.data.stack.join(" · ")}{" · "}<a href={project.data.repo}>{project.data.repo.replace(/^https:\/\//, "")}</a>
           </p>
-          <ul>{project.data.highlights.map((item) => <li>{item}</li>)}</ul>
+          {project.data.highlights && (
+            <ul>{project.data.highlights.map((item) => <li>{item}</li>)}</ul>
+          )}
         </div>
       ))}
     </section>

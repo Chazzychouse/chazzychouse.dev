@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 292" role="img" aria-labelledby="t">
+  <title id="t">The kernel's input devices feed two programs: the counter daemon, which drives the
+    Waybar module, and the GTK 4 key overlay.</title>
+  <style>
+    rect { fill: #fff; stroke: #5d5a54; }
+    text { fill: #1d1c1a; font: 15px system-ui, sans-serif; }
+    .sub { fill: #5d5a54; font-size: 13px; }
+    line { stroke: #8a3b12; stroke-width: 1.5; }
+    .head { fill: #8a3b12; }
+    @media (prefers-color-scheme: dark) {
+      rect { fill: #1f1d1a; stroke: #a8a399; }
+      text { fill: #e9e6df; }
+      .sub { fill: #a8a399; }
+      line { stroke: #e8955f; }
+      .head { fill: #e8955f; }
+    }
+  </style>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <polygon class="head" points="0,0 10,5 0,10" />
+    </marker>
+  </defs>
+  <g text-anchor="middle">
+    <rect x="120" y="20" width="400" height="52" rx="6" />
+    <text x="320" y="42">Kernel input devices (evdev)</text>
+    <text class="sub" x="320" y="61">/dev/input/event*</text>
+
+    <rect x="40" y="120" width="260" height="52" rx="6" />
+    <text x="170" y="142">Counter daemon</text>
+    <text class="sub" x="170" y="161">session and lifetime counts</text>
+
+    <rect x="340" y="120" width="260" height="52" rx="6" />
+    <text x="470" y="142">Key overlay (GTK 4)</text>
+    <text class="sub" x="470" y="161">draws recent keys with Cairo</text>
+
+    <rect x="40" y="220" width="260" height="52" rx="6" />
+    <text x="170" y="242">Waybar module</text>
+    <text class="sub" x="170" y="261">signaled on every event</text>
+  </g>
+  <line x1="240" y1="72" x2="175" y2="118" marker-end="url(#arrow)" />
+  <line x1="400" y1="72" x2="465" y2="118" marker-end="url(#arrow)" />
+  <line x1="170" y1="172" x2="170" y2="218" marker-end="url(#arrow)" />
+</svg>

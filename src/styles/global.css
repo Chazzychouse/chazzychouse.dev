@@ -96,7 +96,7 @@ main img { max-width: 100%; height: auto; }
 .site-footer ul { padding-top: 2rem; border-top: 1px solid var(--rule); }
 
 @media print {
-  @page { size: Letter; margin: 0.55in 0.6in; }
+  @page { size: Letter; margin: 0.5in 0.6in; }
   :root { --bg: #fff; --text: #000; --muted: #333; --rule: #999; --accent: #000; }
   body { font-size: 10pt; line-height: 1.4; }
   .site-header, .site-footer, .skip, .download { display: none; }

@@ -3,13 +3,13 @@ resume:
   location: Chesapeake, VA · Open to remote or relocation
   email: chazzychouse.dev@gmail.com
   github: https://github.com/Chazzychouse
-  headline: Backend engineer. Databases, testing, and the systems underneath.
+  headline: Backend engineer. SQL, testing, and the systems underneath.
   summary: >-
     Backend software engineer with 4 years of professional experience, most of it modernizing a
     long-lived Classic ASP and SQL Server product from the inside: building a modern .NET service
     layer, moving pages onto it one at a time, and shipping the product's public API. Most at
-    home where application code meets the database. Interested in databases, operating systems
-    and testing that proves software is correct rather than hoping it is. Came to software from
+    home where application code meets the database, and drawn to operating systems and to
+    testing that proves software is correct rather than hoping it is. Came to software from
     electrical engineering and C++, after years in sales and hospitality.
   experience:
     - company: Issuetrak
@@ -53,10 +53,8 @@ resume:
       items:
         [.NET / ASP.NET, Dapper, Entity Framework, ADO, REST API design, FastAPI, NestJS, Effect,
          Prisma, SQL Server, PostgreSQL/PostGIS, SQLite]
-    - label: Frontend
-      items: [React, jQuery, Classic ASP]
-    - label: Integrations
-      items: [HubSpot, Zapier]
+    - label: Frontend & integrations
+      items: [React, jQuery, Classic ASP, HubSpot, Zapier]
     - label: Testing
       items:
         ["Property-based testing (Hypothesis, fast-check)", Stateful simulation, Mutation testing,
@@ -68,17 +66,13 @@ resume:
       program: Electrical Engineering and Computer Science coursework
       start: "2021"
       end: "2022"
-      note: >-
-        Spring 2021 to Fall 2022, plus credits from earlier study. Two electives short of an
-        Associate of Science in Computer Science.
+      note: Two electives short of an A.S. in Computer Science; includes credits from earlier study.
   earlier:
     - title: Real Estate Agent (licensed, independent contractor)
       org: A Better Way Realty
       start: "2018"
       end: "2022"
-      detail: >-
-        Ran a self-directed sales business: found clients, negotiated contracts and managed
-        transactions from listing to closing.
+      detail: Ran a self-directed sales business, from finding clients through negotiation to closing.
     - title: Head Waiter
       org: Wild Wing Cafe, Chesapeake, VA
       start: "2015"

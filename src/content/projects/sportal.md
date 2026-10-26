@@ -16,9 +16,11 @@ a TV and a phone, all agreeing on what's happening.
 
 sportal is a pnpm monorepo with three apps:
 
-- **The Hub** is one server process. It polls unofficial score feeds, folds every update into
-  one in-memory slate of games, and serves it to clients over a single WebSocket, as requests
-  and live queries.
+![sportal's desktop shell in a 2×2 layout: each tile has its game's score and clock, one is on air with sound, one game is final. The broadcasts in the tiles are blurred.](/figures/sportal.webp)
+
+- **The Hub** is one server process. It polls ESPN's scoreboard for the day's games, takes live
+  updates from ESPN's push feed, folds them into one in-memory slate of games, and serves it to
+  clients over a single WebSocket, as requests and live queries.
 - **The web app** is a React tracker that works in any browser: scores, game situations
   (down and distance, field position), play-by-play, team stats and win probability.
 - **The desktop shell** is an Electron app whose tiles are the streaming providers' own web
@@ -26,6 +28,14 @@ sportal is a pnpm monorepo with three apps:
   left alone.
 
 ## Key decisions
+
+- **Measure before choosing a feed.** ESPN has several feeds, and none documents its lag. I
+  recorded them side by side through an NFL Sunday window and timed each play from the snap to
+  when each feed first showed it. FastCast, ESPN's push feed, was fastest: a median of 28 s over
+  382 plays, against 41 s for the scoreboard the Hub had been polling. So FastCast became the
+  live source, and the scoreboard poll still lists the day's games.
+
+  ![An early snapshot of the feed-lag measurement: lag per play for each ESPN feed, and a summary table of median and p90 lag per feed.](/figures/sportal-feed-lag.webp)
 
 - **Feeds are untrusted.** The score feeds are unofficial and can change shape without notice.
   Everything entering through the provider boundary is decoded against a schema on the way in.

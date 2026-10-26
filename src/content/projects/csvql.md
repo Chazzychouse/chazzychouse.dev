@@ -14,6 +14,8 @@ script. I wanted to point SQL at the file and ask.
 
 ## What I built
 
+![csvQL's terminal UI: a sales table with monthly columns, a side panel showing the selected cell, the inferred schema and the loaded tables, and a SQL query being typed with an autocomplete suggestion.](/figures/csvql.webp)
+
 csvQL is a terminal app and CLI that loads CSV files, whole directories of them, or every sheet
 of an `.xlsx` workbook as tables, then runs SQL against them. The interactive mode is a
 full-screen terminal UI: a data grid with virtual scrolling, a query bar with autocomplete for

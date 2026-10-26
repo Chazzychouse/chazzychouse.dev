@@ -1,0 +1,87 @@
+resume:
+  name: Chase R. Cartwright
+  location: Chesapeake, VA · Open to remote or relocation
+  email: chazzychouse.dev@gmail.com
+  github: https://github.com/Chazzychouse
+  headline: Backend engineer. Databases, testing, and the systems underneath.
+  summary: >-
+    Backend software engineer with 4 years of professional experience, most of it modernizing a
+    long-lived Classic ASP and SQL Server product from the inside: building a modern .NET service
+    layer, moving pages onto it one at a time, and shipping the product's public API. Most at
+    home where application code meets the database. Interested in databases, operating systems
+    and testing that proves software is correct rather than hoping it is. Came to software from
+    electrical engineering and C++, after years in sales and hospitality.
+  experience:
+    - company: Issuetrak
+      roles:
+        - { title: Software Engineer II, start: 2024-05, end: 2026-05 }
+        - { title: Software Engineer I, start: 2023-05, end: 2024-05 }
+        - { title: Software Engineer Intern, start: 2022-10, end: 2023-05 }
+      bullets:
+        - >-
+          Designed and built a modern .NET service layer for a Classic ASP product, then moved
+          dozens of legacy pages onto React front ends backed by it (strangler fig pattern),
+          modernizing the product screen by screen with no rewrite.
+        - >-
+          Built, tested, shipped and maintained the Issuetrak Public API, and a Zapier
+          integration app on top of it that connects customers to third-party tools.
+        - Built an internal revenue application with a daily HubSpot sync.
+        - >-
+          Worked on and oversaw the migration from legacy Entity Framework to Dapper (explicit
+          transactions and stored procedure calls), guiding the junior engineer assigned to it.
+          This cleared the way to move from .NET Framework to modern .NET.
+        - >-
+          Wrote and maintained SQL Server stored procedures that held core business logic, from
+          calculating an issue's working hours to the commands behind every state transition,
+          along with the queries the Classic ASP pages read through ADO.
+        - >-
+          Hired full-time as Software Engineer I after a 7-month internship; promoted to
+          Software Engineer II one year later.
+    - company: Telecommunications startup
+      roles:
+        - { title: Software Engineer, start: 2026-05, end: 2026-10 }
+      bullets:
+        - >-
+          Designed a strategy for enforcing the domain's state machine in the database, so
+          invalid state transitions would be rejected by the database itself rather than by
+          scattered checks in a Prisma-based application.
+        - Helped establish the team's development workflow.
+  skills:
+    - label: Languages
+      items: [C#, "SQL (T-SQL, PostgreSQL)", TypeScript/JavaScript, Python, Go, Rust, C++, VBScript]
+    - label: Backend & data
+      items:
+        [.NET / ASP.NET, Dapper, Entity Framework, ADO, REST API design, FastAPI, NestJS, Effect,
+         Prisma, SQL Server, PostgreSQL/PostGIS, SQLite]
+    - label: Frontend
+      items: [React, jQuery, Classic ASP]
+    - label: Integrations
+      items: [HubSpot, Zapier]
+    - label: Testing
+      items:
+        ["Property-based testing (Hypothesis, fast-check)", Stateful simulation, Mutation testing,
+         Vitest, Playwright, pytest]
+    - label: Infrastructure
+      items: [Docker, Terraform, Azure, GitHub Actions, GitLab CI, Linux]
+  education:
+    - school: Tidewater Community College
+      program: Electrical Engineering and Computer Science coursework
+      start: "2021"
+      end: "2022"
+      note: >-
+        Spring 2021 to Fall 2022, plus credits from earlier study. Two electives short of an
+        Associate of Science in Computer Science.
+  earlier:
+    - title: Real Estate Agent (licensed, independent contractor)
+      org: A Better Way Realty
+      start: "2018"
+      end: "2022"
+      detail: >-
+        Ran a self-directed sales business: found clients, negotiated contracts and managed
+        transactions from listing to closing.
+    - title: Head Waiter
+      org: Wild Wing Cafe, Chesapeake, VA
+      start: "2015"
+      end: "2023"
+      note: Full time, then part time alongside software work
+      detail: Led the floor during high-volume service and trained new staff.

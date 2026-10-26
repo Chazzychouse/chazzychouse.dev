@@ -1,0 +1,5 @@
+---
+import { getResume } from "../lib/content.ts";
+const resume = await getResume();
+---
+<p>{resume.name}</p>

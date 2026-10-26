@@ -8,9 +8,9 @@ resume:
     Backend software engineer with 4 years of professional experience, most of it modernizing a
     long-lived Classic ASP and SQL Server product from the inside: building a modern .NET service
     layer, moving pages onto it one at a time, and shipping the product's public API. Most at
-    home where application code meets the database, and drawn to operating systems and to
-    testing that proves software is correct rather than hoping it is. Came to software from
-    electrical engineering and C++, after years in sales and hospitality.
+    home where application code meets the database. Deeply interested in operating systems,
+    and in tests that prove code is correct rather than just running it. Came to software by
+    way of electrical engineering and C++, after years in sales and hospitality.
   experience:
     - company: Issuetrak
       roles:
